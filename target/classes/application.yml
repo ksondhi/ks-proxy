@@ -1,0 +1,27 @@
+server:
+  use-forward-header: true
+  port: 8443
+  ssl:
+    key-store-type: PKCS12
+    key-store: classpath:keystore.p12
+    key-store-password: changeit
+    key-alias: tomcat
+security:
+  require-ssl: true
+
+ribbon:
+  eureka:
+    enabled: false
+zuul:
+  sensitiveHeaders: Cookie,Set-Cookie,Authorization
+  routes:
+    gmail:
+      path: /gmail/**
+      url: https://www.gmail.com
+    hangouts:
+      path: /hangouts/**
+      url: https://hangouts.google.com
+    espn:
+      path: /espn/**
+      url: https://www.espn.com
+

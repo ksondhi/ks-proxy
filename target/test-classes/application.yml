@@ -1,0 +1,5 @@
+zuul:
+  routes:
+    hangouts:
+      path: /hangouts/**
+      url: https://hangouts.google.com/
